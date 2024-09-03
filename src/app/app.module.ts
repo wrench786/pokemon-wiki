@@ -7,6 +7,8 @@ import { TopBannerComponent } from './component/top-banner/top-banner.component'
 import { FooterComponent } from './component/footer/footer.component';
 import { PokemonListComponent } from './component/pokemon-list/pokemon-list.component';
 import { DetailsPageComponent } from './component/details-page/details-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { DetailsPageComponent } from './component/details-page/details-page.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

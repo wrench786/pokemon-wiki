@@ -2,19 +2,20 @@
     <div class="details-section shadow">
         <div class="grid-wrapper">
             <div class="left-div">
-                <h2>Bulbasaur</h2>
-                <div class="type-info">
-                    <p>Grass</p>
-                    <p>Poison</p>
-                </div>
-                <img src="../../../assets/dummy.jpeg" alt="balbasaur">
+               <h2>{{ pokemon.name}}</h2>
+               <div class="type-info" >
+                  <div *ngFor="let types of pokemon.types">
+                     <p>{{types.type.name}}</p>
+                  </div>
+               </div>
+                <img [src]="pokemon.sprites.other.dream_world.front_default" alt="balbasaur">
             </div>
             
             <div class="right-div">
                 <h2>Pokemon Details</h2>
-                <p><strong>Experience</strong> 64</p>
-                <p><strong>Height</strong> 6 decimeter</p>
-                <p><strong>Weight</strong> 69 hectogram</p>
+                <p><strong>Experience</strong>{{pokemon.base_experience}}</p>
+                <p><strong>Height</strong> {{pokemon.height}} 6 decimeter</p>
+                <p><strong>Weight</strong> {{pokemon.weight}} hectogram</p>
             </div>
         </div>
     </div>
@@ -24,28 +25,28 @@
 
         <div class="grid-wrapper">
              <div class="card shadow">
-                <img src="../../../assets/dummy.jpeg" alt="Image">
+                <img [src]="pokemon.sprites.other.home.front_default" alt="Image">
              </div>
              <div class="card shadow">
-                <img src="../../../assets/dummy.jpeg" alt="Image">
+                <img [src]="pokemon.sprites.other.home.front_shiny" alt="Image">
              </div>
              <div class="card shadow">
-                <img src="../../../assets/dummy.jpeg" alt="Image">
+                <img [src]="pokemon.sprites.other.showdown.front_default" alt="Image">
              </div>
              <div class="card shadow">
-                <img src="../../../assets/dummy.jpeg" alt="Image">
+                <img [src]="pokemon.sprites.other.showdown.back_default" alt="Image">
              </div>
              <div class="card shadow">
-                <img src="../../../assets/dummy.jpeg" alt="Image">
+                <img [src]="pokemon.sprites.other.showdown.front_shiny" alt="Image">
              </div>
              <div class="card shadow">
-                <img src="../../../assets/dummy.jpeg" alt="Image">
+                <img [src]="pokemon.sprites.other.showdown.back_shiny" alt="Image">
              </div>
              <div class="card shadow">
-                <img src="../../../assets/dummy.jpeg" alt="Image">
+                <img [src]="pokemon.sprites.other?.['official-artwork'].front_default" alt="Image">
              </div>
              <div class="card shadow">
-                <img src="../../../assets/dummy.jpeg" alt="Image">
+                <img [src]="pokemon.sprites.other?.['official-artwork'].front_shiny" alt="Image">
              </div> 
         </div>
     </div>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,13 +7,17 @@ import { BehaviorSubject } from 'rxjs';
 export class SharedDataService {
 
   private dataSubject = new BehaviorSubject<any>(null);
-  data$ = this.dataSubject.asObservable();
+  //data$ = this.dataSubject.asObservable();
 
   constructor() { 
     const storedData = localStorage.getItem('sharedData');
     if(storedData){
       this.dataSubject.next(JSON.parse(storedData));
     }
+  }
+
+  getData():Observable<any>{
+    return this.dataSubject.asObservable();
   }
 
   sendData(data:any){
